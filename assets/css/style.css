@@ -1,0 +1,175 @@
+/* ADDONS AND IMPORTS */
+/* navAnim(red for example) is used for the navigation bar hover animation */
+/* font(primary or secondary) is used to select one the fonts that's used on the site */
+/* NOTE:
+Please, if you add a font. Make sure to register it in the hq fonts list and summon it using the method in methods.scss
+*/
+@import url("https://necolas.github.io/normalize.css/3.0.2/normalize.css");
+@font-face {
+  font-family: "Titillium Web";
+  src: url("https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900&display=swap&subset=latin-ext");
+}
+
+/* Site colors */
+body {
+  background-color: #454545;
+  color: #f1f1f1;
+}
+
+body .container {
+  position: relative;
+}
+
+.navbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+  font-size: 1em;
+  word-spacing: 0.1;
+  /* -- Spikes */
+  /* -- nav Main styling */
+}
+
+.navbar::before {
+  position: absolute;
+  left: 0;
+  bottom: 99%;
+  width: 5vh;
+  height: 5vh;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+          clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  background-color: #1d1d1d;
+  content: "";
+  z-index: -1;
+}
+
+.navbar::after {
+  position: absolute;
+  right: 0;
+  bottom: 99%;
+  width: 5vh;
+  height: 5vh;
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  background-color: #1d1d1d;
+  content: "";
+  z-index: -1;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1d1d1d;
+  text-align: center;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0;
+}
+
+.navbar li a {
+  display: block;
+  color: #f1f1f1;
+  font-family: "Titillium Web";
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1em;
+  padding: 1.2em 3.9em;
+  text-decoration: none;
+  white-space: initial;
+  /* -- nav button hover animation */
+}
+
+.navbar li a:hover {
+  -webkit-box-shadow: inset 0px 0.5em 0px 0px #8b29cc;
+  box-shadow: inset 0px 0.5em 0px 0px #8b29cc;
+  -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in-out 0s;
+  transition: -webkit-box-shadow 0.3s ease-in-out 0s;
+  transition: box-shadow 0.3s ease-in-out 0s;
+  transition: box-shadow 0.3s ease-in-out 0s, -webkit-box-shadow 0.3s ease-in-out 0s;
+}
+
+.navbar li a.active {
+  -webkit-box-shadow: inset 0px 0.5em 0px 0px #cc2979;
+  box-shadow: inset 0px 0.5em 0px 0px #cc2979;
+  -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in-out 0s;
+  transition: -webkit-box-shadow 0.3s ease-in-out 0s;
+  transition: box-shadow 0.3s ease-in-out 0s;
+  transition: box-shadow 0.3s ease-in-out 0s, -webkit-box-shadow 0.3s ease-in-out 0s;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(-45deg, #cc2979, #8b29cc, #3499b2, #34b277);
+  background-size: 400% 400%;
+  position: relative;
+  -webkit-animation: backgroundAnim 10s ease-in-out infinite;
+          animation: backgroundAnim 10s ease-in-out infinite;
+}
+
+.banner #headerlogoimg {
+  display: block;
+  width: 35%;
+  position: absolute;
+  top: 25%;
+  margin-top: auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@-webkit-keyframes backgroundAnim {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes backgroundAnim {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.headera {
+  position: relative;
+  background-color: #1d1d1d;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.headera #discordimgheader {
+  float: right;
+  width: 2em;
+  margin-right: 2em;
+  padding: 0.5em 0em;
+}
+
+.headera #aboutimgheader {
+  margin-left: 2em;
+  width: 2em;
+  padding: 0.5em 0em;
+}
+
+/* Normalize.css import */
